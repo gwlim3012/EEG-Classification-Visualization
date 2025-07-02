@@ -56,8 +56,14 @@ streamlit run eeg_galaxy.py
 ├── .gitignore
 ├── .venv/                       # Python 가상 환경 폴더
 ├── eeg_galaxy.py              # 뇌파 시각화 Streamlit 애플리케이션
+├── split_train_data.py        # train.npy 파일을 분할하는 스크립트
 ├── ML project/ # 진행했던 머신러닝 프로젝트
-│   ├── ML2024_project _EEG_classification.ipynb # 뇌파 분류 머신러닝 모델 개발
-│   └── SVM classifier.csv         # SVM 분류기 결과           
+│   ├── ML2024_project_EEG_classification.ipynb # 뇌파 분류 머신러닝 모델 개발
+│   ├── SVM classifier.csv         # SVM 분류기 결과
+│   └── seoultech-applied-ai-machine-learning1/
+│       └── chunks/                # 분할된 train.npy 데이터 청크
+│           ├── train_X_part_0.npy
+│           ├── train_X_part_1.npy
+│           └── ... (나머지 청크 파일들)
 ├── README.md                  
 ```
