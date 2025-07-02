@@ -67,3 +67,10 @@ streamlit run eeg_galaxy.py
 │           └── ... (나머지 청크 파일들)
 ├── README.md                  
 ```
+
+## 🖼️ 데모 화면
+![image](https://github.com/user-attachments/assets/9f9657d0-0e44-438b-b5c6-71f4295a0fa1)
+![image](https://github.com/user-attachments/assets/235e2561-de2a-4d8e-8708-18ea4961f3f0)
+![image](https://github.com/user-attachments/assets/5a1d1de3-aa16-4c9c-9bd3-7772a3f75728)
+
+
