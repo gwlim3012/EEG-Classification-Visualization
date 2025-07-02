@@ -3,6 +3,7 @@ import numpy as np
 import scipy.signal
 import pandas as pd
 import plotly.graph_objects as go
+import os
 
 # EEG feature extraction 함수
 @st.cache_data
@@ -24,9 +25,22 @@ def extract_eeg_features(input_data, labels, fs=256, nperseg=256):
 # 데이터 로드 함수
 @st.cache_data
 def load_data():
-    data = np.load('seoultech-applied-ai-machine-learning1/train.npy', allow_pickle=True).item()
-    x = data['input'].reshape(-1, 256, 64)
-    y = data['label']
+    chunks_dir = 'ML project/seoultech-applied-ai-machine-learning1/chunks'
+    num_chunks = 10 # Assuming 10 chunks were created
+
+    X_chunks = []
+    y_chunks = []
+
+    for i in range(num_chunks):
+        X_chunk_path = os.path.join(chunks_dir, f'train_X_part_{i}.npy')
+        y_chunk_path = os.path.join(chunks_dir, f'train_y_part_{i}.npy')
+        X_chunks.append(np.load(X_chunk_path, allow_pickle=True))
+        y_chunks.append(np.load(y_chunk_path, allow_pickle=True))
+
+    x = np.concatenate(X_chunks, axis=0)
+    y = np.concatenate(y_chunks, axis=0)
+
+    x = x.reshape(-1, 256, 64) # Ensure correct reshape after concatenation
     return x, y
 
 # 집계된 평균 파워 계산
