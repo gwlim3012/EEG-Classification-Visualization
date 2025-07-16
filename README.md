@@ -33,7 +33,7 @@ source .venv/bin/activate
 ```
 
 ### 2. 의존성 설치
-프로젝트에 필요한 라이브러리를 설치합니다. `requirements.txt` 파일이 없으므로, 필요한 라이브러리를 직접 설치해야 합니다.
+프로젝트에 필요한 라이브러리를 설치합니다. 
 
 ```bash
 pip install streamlit numpy scipy pandas plotly
