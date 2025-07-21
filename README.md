@@ -1,9 +1,9 @@
 # 뇌파 추상화: 상호작용형 시각 예술
 
 ## 💡 프로젝트 개요
-이 프로젝트는 대학교 머신러닝 과목의 팀프로젝트였던 ‘EEG 데이터를 활용한 알코올 중독자 분류’에서 출발한 토이 프로젝트입니다. 원래 프로젝트에서는 뇌파 데이터를 FFT(고속 푸리에 변환)로 주파수 영역 특성을 추출하고, 델타·세타·알파·베타·감마 대역별 중앙값을 주요 피처로 삼아 선형 커널 SVM으로 알코올 중독자를 분류했습니다.
+이 프로젝트는 원래 대학교 머신러닝 과목 팀 프로젝트였던 ‘EEG 데이터를 활용한 알코올 중독자 분류’에서 출발한 토이 프로젝트입니다. 당시에는 뇌파 데이터를 FFT(고속 푸리에 변환)를 통해 주파수 영역 특성을 추출하고, 델타·세타·알파·베타·감마 대역별 중앙값을 주요 피처로 사용해 선형 커널 SVM으로 알코올 중독자를 분류했습니다. 그 결과, test data 기준 약 97%의 정확도를 기록했습니다.
 
-분석을 진행하며 뇌파 데이터를 단순한 2D 그래프가 아니라 3D 공간에서 시각화하면 좋겠다는 생각이 들었습니다. 별자리와 은하의 형상을 차용해 인터랙티브 예술 작품처럼 재구성했으며, 사용자는 포인트 크기를 조절하고 랜덤성을 설정하면서 실시간으로 다양한 시각 패턴을 탐색할 수 있습니다.
+프로젝트 간 데이터 분석을 진행하면서 뇌파 데이터를 단순한 2D 그래프가 아니라 3D 공간에서 시각화해보면 좋겠다는 생각이 들었습니다. 그래서 사용자가 포인트의 크기와 랜덤성을 조절해가며 별자리와 은하의 형상을 만들 수 있도록 인터랙티브 예술 작품처럼 재구성해보았습니다.
 
 ## ✨ 주요 기능
 *   **인터랙티브 뇌파 시각화**: 뇌파 밴드(델타, 세타, 알파, 베타, 감마)의 파워 데이터를 3D 산점도 형태로 시각화합니다.
@@ -55,11 +55,11 @@ streamlit run eeg_galaxy.py
 ```
 ├── .gitignore
 ├── .venv/                       # Python 가상 환경 폴더
-├── eeg_galaxy.py              # 뇌파 시각화 Streamlit 애플리케이션
-├── split_train_data.py        # train.npy 파일을 분할하는 스크립트
+├── eeg_galaxy.py              # 뇌파 시각화 Streamlit 대시보드
+├── split_train_data.py        # train.npy 파일을 분할
 ├── ML project/ # 진행했던 머신러닝 프로젝트
 │   ├── ML2024_project_EEG_classification.ipynb # 뇌파 분류 머신러닝 모델 개발
-│   ├── SVM classifier.csv         # SVM 분류기 결과
+│   ├── SVM classifier.csv         # 분류 결과
 │   └── seoultech-applied-ai-machine-learning1/
 │       └── chunks/                # 분할된 train.npy 데이터 청크
 │           ├── train_X_part_0.npy
@@ -68,7 +68,7 @@ streamlit run eeg_galaxy.py
 ├── README.md                  
 ```
 
-## 🖼️ 데모 화면
+## 🖼️ 실행 화면
 ![image](https://github.com/user-attachments/assets/9f9657d0-0e44-438b-b5c6-71f4295a0fa1)
 ![image](https://github.com/user-attachments/assets/235e2561-de2a-4d8e-8708-18ea4961f3f0)
 ![image](https://github.com/user-attachments/assets/5a1d1de3-aa16-4c9c-9bd3-7772a3f75728)
